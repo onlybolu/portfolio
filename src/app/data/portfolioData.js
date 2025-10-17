@@ -9,7 +9,7 @@ export const portfolioData = {
   },
   skills: {
     languages: ["JavaScript", "TypeScript", "Solidity", "Java"],
-    frameworks: ["Next.js", "React", "Node.js", "Ethers.js", "Tailwind CSS"],
+    frameworks: ["Next.js", "React", "Node.js", "Ethers.js", "Tailwind CSS", "React Native", "Thirdweb.js"],
     databases: ["MongoDB", "Firebase", "Appwrite", "PostgreSQL"],
     tools: ["Git", "GitHub", "Hardhat", "Figma", "Docker"],
   },
