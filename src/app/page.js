@@ -8,7 +8,7 @@ import { Footer } from '@/app/components/Footer';
 import { SpotlightEffect } from '@/app/components/SpotlightEffect';
 import { AOSInit } from '@/app/components/AOSInit';
 
-// Animation variants for sections
+
 const sectionVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -152,52 +152,78 @@ const ExperienceSection = () => (
     </Section>
   );
 
-const ProjectsSection = () => (
-  <Section title="Key Projects" icon={BookOpen} id="projects">
-    <div className="grid md:grid-cols-2 gap-8">
-      {portfolioData.projects.map((project) => (
-        <div key={project.name} className="group bg-slate-800 rounded-xl shadow-xl overflow-hidden hover:shadow-cyan-500/20 transition-all duration-300 border border-slate-700 transform hover:-translate-y-1" data-aos="fade-up">
-          <div className="relative h-48 w-full overflow-hidden">
-            <Image
-              src={project.image}
-              alt={`${project.name} preview`}
-              fill
-              style={{ objectFit: 'cover' }}
-              className="transition-transform duration-500 group-hover:scale-105"
-            />
+const ProjectsSection = () => {
+const initialProjectsToShow = 4;
+  const [visibleProjectsCount, setVisibleProjectsCount] = useState(initialProjectsToShow);
+  const showAllProjects = visibleProjectsCount === portfolioData.projects.length;
+
+  const handleToggleProjects = () => {
+    if (showAllProjects) {
+      setVisibleProjectsCount(initialProjectsToShow);
+    } else {
+      setVisibleProjectsCount(portfolioData.projects.length);
+    }
+  };
+
+  const projectsToDisplay = portfolioData.projects.slice(0, visibleProjectsCount);
+
+  return (
+    <Section title="Key Projects" icon={BookOpen} id="projects">
+      <div className="grid md:grid-cols-2 gap-8">
+        {projectsToDisplay.map((project) => (
+          <div key={project.name} className="group bg-slate-800 rounded-xl shadow-xl overflow-hidden hover:shadow-cyan-500/20 transition-all duration-300 border border-slate-700 transform hover:-translate-y-1" data-aos="fade-up">
+            <div className="relative h-48 w-full overflow-hidden">
+              <Image
+                src={project.image}
+                alt={`${project.name} preview`}
+                fill
+                style={{ objectFit: 'cover' }}
+                className="transition-transform duration-500 group-hover:scale-105"
+              />
           </div>
           <div className="p-6">
-            <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
-            <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.stack.map((tech) => (
-                <Badge key={tech} icon={Server}>{tech}</Badge>
-              ))}
-            </div>
-            <div className="flex space-x-4">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-cyan-600 transition duration-300 flex items-center gap-2 font-medium"
-              >
-                <Github size={18} /> Code
-              </a>
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition duration-300 flex items-center gap-2 font-medium"
-              >
-                <Zap size={18} /> Live Demo
-              </a>
-            </div>
+              <h3 className="text-2xl font-bold text-white mb-2">{project.name}</h3>
+              <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.stack.map((tech) => (
+                  <Badge key={tech} icon={Server}>{tech}</Badge>
+                ))}
+              </div>
+              <div className="flex space-x-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-cyan-600 transition duration-300 flex items-center gap-2 font-medium"
+                >
+                  <Github size={18} /> Code
+                </a>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition duration-300 flex items-center gap-2 font-medium"
+                >
+                  <Zap size={18} /> Live Demo
+                </a>
+              </div>
           </div>
         </div>
       ))}
+     
     </div>
+        {portfolioData.projects.length > initialProjectsToShow && (
+        <div className="flex items-center justify-center mt-8">
+          <button
+            onClick={handleToggleProjects}
+            className="text-white underline text-center cursor-pointer hover:text-cyan-400 transition-colors duration-300"
+          >
+            {showAllProjects ? 'View Less' : 'View All Projects'}
+          </button>
+        </div>
+      )}
   </Section>
-);
+);}
 
 const ContactSection = () => (
     <Section title="Get In Touch" icon={Mail} id="contact">
