@@ -84,7 +84,7 @@ const HeroSection = () => (
           </a>
           <a
             href={portfolioData.contact.cv}
-            download="/boluwatife_obateru_cv.pdf" 
+            download="boluwatife_obateru_cv.pdf" 
             className="text-gray-300 hover:text-cyan-400 transition duration-300 transform hover:scale-110"
             aria-label="Download CV"
             title="Download CV"
