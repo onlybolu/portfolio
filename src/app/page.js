@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Briefcase, Code, BookOpen, Layers, Star, Zap, Server, Database, GitBranch, Terminal, Menu, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Briefcase, Code, BookOpen, Layers, Star, Zap, Server, Database, GitBranch, Terminal, Menu, X, Download } from 'lucide-react';
 import Image from 'next/image';
 import { portfolioData } from '@/app/data/portfolioData';
 import { Header } from '@/app/components/Header';
@@ -81,6 +81,15 @@ const HeroSection = () => (
             aria-label="Send Email"
           >
             <Mail size={28} />
+          </a>
+          <a
+            href={portfolioData.contact.cv}
+            download="/boluwatife_obateru_cv.pdf" 
+            className="text-gray-300 hover:text-cyan-400 transition duration-300 transform hover:scale-110"
+            aria-label="Download CV"
+            title="Download CV"
+          >
+            <Download size={28} />
           </a>
         </div>
       </div>
@@ -190,14 +199,14 @@ const initialProjectsToShow = 4;
                 ))}
               </div>
               <div className="flex space-x-4">
-                <a
+                {/* <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-cyan-600 transition duration-300 flex items-center gap-2 font-medium"
                 >
                   <Github size={18} /> Code
-                </a>
+                </a> */}
                 <a
                   href={project.live}
                   target="_blank"

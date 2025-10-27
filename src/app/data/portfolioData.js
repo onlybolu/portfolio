@@ -1,17 +1,18 @@
 export const portfolioData = {
   name: "OBATERU BOLUWATIFE ANDREW",
-  title: "Full-stack & Web3 Developer", // Updated title to be more inclusive
-  summary: "A passionate developer specializing in building high-performance, responsive web applications using the Next.js and React ecosystem. Experienced in handling both front-end aesthetics with Tailwind CSS and secure back-end operations with technologies like Appwrite, MongoDB, and Web3 protocols.",
+  title: "Software Engineer", // Updated title to be more inclusive
+  summary: "I build high-performance, scalable web and mobile applications focused on delivering seamless, functional, and engaging user experiences.",
   contact: {
     email: "boluwatifeobateru@gmail.com",
-    linkedin: "#", 
-    github: "#",   
+    linkedin: "www.linkedin.com/in/boluwatife-obateru", 
+    github: "https://github.com/onlybolu",
+    cv: "/boluwatife_obateru_cv.pdf", 
   },
   skills: {
     languages: ["JavaScript", "TypeScript", "Solidity", "Java","Python"],
-    frameworks: ["Next.js", "React", "Node.js", "Ethers.js", "Tailwind CSS", "React Native", "Thirdweb.js"],
+    frameworks: ["Next.js", "React", "Node.js", "Tailwind CSS", "React Native", "Thirdweb.js"],
     databases: ["MongoDB", "Firebase", "Appwrite", "PostgreSQL"],
-    tools: ["Git", "GitHub", "Hardhat", "Figma", "Docker"],
+    tools: ["Git", "GitHub", "Figma", "Docker"],
   },
   experience: [
     {
@@ -25,7 +26,7 @@ export const portfolioData = {
     {
       role: "Frontend Developer",
       company: "Shaakaarah agency",
-      duration: "Dec 2024 - April 2025",
+      duration: "Dec 2024 - November 2025",
       location: "Lagos, Nigeria",
       description: "Built Algorithmics, successfully developing responsive and visually appealing user interfaces. Focused on delivering seamless user experiences across various devices.",
       stack: ["Next.js", "Tailwind CSS"],
