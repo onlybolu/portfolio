@@ -22,7 +22,6 @@ export const blogData = [
   But as with any journey, the road wasn’t always smooth. The excitement of getting gigs didn’t last long. One by one, my employees started leaving until I was left with just two. It was a tough pill to swallow, but it taught me an invaluable lesson: <em>"Dreams don’t always go as planned. There are ups and downs."</em>
 
   
-
   Instead of giving up, I decided to pivot. I focused on finding a niche and building "generic products" that could make a real impact. That’s where Inovareun is today, a company dedicated to creating innovative products that I can’t wait to share with the world.
 
   The journey has been nothing short of incredible. From funny brainstorming sessions to the challenges of running a startup, every step has been a learning experience. And as I look ahead, I’m filled with excitement for what’s to come. Stay tuned, Inovareun is just getting started!
