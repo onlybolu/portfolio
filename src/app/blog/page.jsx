@@ -35,21 +35,33 @@ const BlogPostCard = ({ post, index }) => {
       className="bg-slate-800 rounded-xl shadow-lg overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1 group"
     >
       <div className="p-6 sm:p-8">
-        <div className="flex items-center gap-4 text-sm text-slate-400 mb-3">
-          <div className="flex items-center gap-1.5">
-            <Calendar size={14} />
-            <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <Link href={`/blog/${post.slug}`}>
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-3">
+            <div className="flex items-center gap-1.5">
+              <Calendar size={14} />
+              <span>
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </span>
+            </div>
           </div>
-        </div>
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-          <Link href={`/blog/${post.slug}`} className="stretched-link">{post.title}</Link>
-        </h3>
-        <p className="text-slate-300 mb-4 leading-relaxed">{post.excerpt}</p>
-        <div className="flex flex-wrap gap-2">
-          {post.tags.map(tag => (
-            <Badge key={tag} icon={Tag}>{tag}</Badge>
-          ))}
-        </div>
+          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+            <h1 className="stretched-link">
+              {post.title}
+            </h1>
+          </h3>
+          <p className="text-slate-300 mb-4 leading-relaxed">{post.excerpt}</p>
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <Badge key={tag} icon={Tag}>
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </Link>
       </div>
     </motion.div>
   );
